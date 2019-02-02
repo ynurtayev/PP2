@@ -1,5 +1,0 @@
-c:\users\ержан\documents\visual studio 2015\Projects\task22\task22\bin\Debug\task22.exe.config
-c:\users\ержан\documents\visual studio 2015\Projects\task22\task22\bin\Debug\task22.exe
-c:\users\ержан\documents\visual studio 2015\Projects\task22\task22\bin\Debug\task22.pdb
-c:\users\ержан\documents\visual studio 2015\Projects\task22\task22\obj\Debug\task22.exe
-c:\users\ержан\documents\visual studio 2015\Projects\task22\task22\obj\Debug\task22.pdb

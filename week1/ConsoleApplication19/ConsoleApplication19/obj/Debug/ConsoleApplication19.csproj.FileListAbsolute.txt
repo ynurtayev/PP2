@@ -1,6 +1,0 @@
-c:\users\ержан\documents\visual studio 2015\Projects\ConsoleApplication19\ConsoleApplication19\bin\Debug\ConsoleApplication19.exe.config
-c:\users\ержан\documents\visual studio 2015\Projects\ConsoleApplication19\ConsoleApplication19\bin\Debug\ConsoleApplication19.exe
-c:\users\ержан\documents\visual studio 2015\Projects\ConsoleApplication19\ConsoleApplication19\bin\Debug\ConsoleApplication19.pdb
-c:\users\ержан\documents\visual studio 2015\Projects\ConsoleApplication19\ConsoleApplication19\obj\Debug\ConsoleApplication19.csprojResolveAssemblyReference.cache
-c:\users\ержан\documents\visual studio 2015\Projects\ConsoleApplication19\ConsoleApplication19\obj\Debug\ConsoleApplication19.exe
-c:\users\ержан\documents\visual studio 2015\Projects\ConsoleApplication19\ConsoleApplication19\obj\Debug\ConsoleApplication19.pdb
