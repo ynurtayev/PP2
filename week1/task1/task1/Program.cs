@@ -8,7 +8,7 @@ namespace Task1
 {
     class Program
     {
-        static bool isprime(int n)
+        static bool isprime(int n)//создал метод для проверки чисел на праймство
         {
             if (n < 2) return false;
             for(int i = 2; i * i <= n; i++)
@@ -18,27 +18,27 @@ namespace Task1
         }
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            int[] a = new int[n];
-            string[] s = new string[n];
-            s = Console.ReadLine().Split();
-            int count = 0;
+            int n = int.Parse(Console.ReadLine());//считивал число через консол
+            int[] a = new int[n];//создал массив
+            string[] s = new string[n];//создал массив строков
+            s = Console.ReadLine().Split();//считываю массив и через сплит мы передаем массив чаров
+            int count = 0;//переменная для считание количесво праймов
             for(int i = 0; i < n; i++)
             {
-                a[i] =int.Parse(s[i]);
+                a[i] =int.Parse(s[i]);//считываем в массив
             }
             for(int i = 0; i < n; i++)
             {
                 if (isprime(a[i]))
                 {
-                    count++;
+                    count++;//считаем количесво праймов
                 }
-            }Console.WriteLine(count);
+            }Console.WriteLine(count);//и выводим
             for(int i = 0; i < n; i++)
             {
                 if (isprime(a[i])){
                     Console.Write(a[i] + " ");
-                }
+                }//и показываем на консоле прайм намберов из массива
             }Console.ReadKey();
         }
     }
