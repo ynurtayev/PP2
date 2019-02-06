@@ -11,28 +11,15 @@ namespace Task4
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            string[,] a = new string[n,n];
+            string s = "[*]";
             for(int i = 0; i < n; i++)
             {
-                for(int j = 0; j < n; j++)
+                for(int j = 0; j < i; j++)
                 {
-                    if(i==j || i > j)
-                    {
-                        a[i, j] = "[*]";
-                    }
-                    else
-                    {
-                        a[i, j] = "";
-                    }
-                }
-            }
-            for(int i = 0; i < n; i++)
-            {
-                for(int j = 0; j < n; j++)
-                {
-                    Console.Write(a[i, j] + " ");
+                    Console.Write(s);
                 }Console.WriteLine();
             }
+            
             Console.ReadKey();
         }
     }

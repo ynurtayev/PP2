@@ -1,1 +1,6 @@
 C:\Users\Ержан\Desktop\pp2\week1\Task2\Task2\bin\Debug\Task2.exe.config
+C:\Users\Ержан\Desktop\pp2\week1\Task2\Task2\bin\Debug\Task2.exe
+C:\Users\Ержан\Desktop\pp2\week1\Task2\Task2\bin\Debug\Task2.pdb
+C:\Users\Ержан\Desktop\pp2\week1\Task2\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
+C:\Users\Ержан\Desktop\pp2\week1\Task2\Task2\obj\Debug\Task2.exe
+C:\Users\Ержан\Desktop\pp2\week1\Task2\Task2\obj\Debug\Task2.pdb
