@@ -24,7 +24,7 @@ namespace task1
                     break;
                 }
             }
-            if (ok)
+            if (ok==false)
             {
                 Console.Write("Yes");
             }
