@@ -9,7 +9,7 @@ namespace Task1
 {
     class FarManager
     {
-        public int cursor,sz;
+        public int cursor,sz;//declaring all variables 
         public bool ok;
         public string path;
         DirectoryInfo di = null;
@@ -18,7 +18,7 @@ namespace Task1
         {
             cursor = 0;
         }
-        public FarManager(string path)
+        public FarManager(string path)//the method that with all the main variables to run the program
         {
             this.path = path;
             cursor = 0;
@@ -26,26 +26,26 @@ namespace Task1
             sz = di.GetFileSystemInfos().Length;
             ok = true;
         }
-        public void Color(FileSystemInfo fs,int index)
+        public void Color(FileSystemInfo fs,int index)//colors 
         {
-            if (cursor == index)
+            if (cursor == index)//color the cursor
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
                 fsi = fs;
             }
-            else if (fs.GetType() == typeof(DirectoryInfo))
+            else if (fs.GetType() == typeof(DirectoryInfo))//the color of the folder or objects
             {
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            else
+            else//anything
             {
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
             }
         }
-        public void Show()
+        public void Show()// method that can show the menu 
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
@@ -62,19 +62,19 @@ namespace Task1
                 k++;
             }
         }
-        public void Up()
+        public void Up()//function to raise up
         {
             cursor--;
             if (cursor < 0)
                 cursor = sz - 1;
         }
-        public void Down()
+        public void Down()//function to reduce down
         {
             cursor++;
-            if (cursor == 0)
+        if (cursor ==sz)
                 cursor = 0;
         }
-        public void CalcSz()
+        public void CalcSz()//function which check  folder and idnexes
         {
             di = new DirectoryInfo(path);
             FileSystemInfo[] fs = di.GetFileSystemInfos();
@@ -91,7 +91,7 @@ namespace Task1
         public void Start()
         {
             ConsoleKeyInfo conskey = Console.ReadKey();
-            while (conskey.Key != ConsoleKey.Escape)
+            while (conskey.Key != ConsoleKey.Escape)//escape will terminate the program
             {
                 CalcSz();
                 Show();
@@ -110,15 +110,15 @@ namespace Task1
                 }
                 if (conskey.Key == ConsoleKey.Enter)
                 {
-                    if (fsi.GetType() == typeof(DirectoryInfo)){
+                    if (fsi.GetType() == typeof(DirectoryInfo)){//if open the folder,then cursor is always top
                         cursor = 0;
                         path = fsi.FullName;
                     }
                 }
-                if (conskey.Key == ConsoleKey.Backspace)
+                if (conskey.Key == ConsoleKey.Backspace)//for going back in folder
                 {
                     cursor = 0;
-                    path=di.Parent.FullName;
+                    path=di.Parent.FullName;//returns  previous folder
                 }
             }
         }
