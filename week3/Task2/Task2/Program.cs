@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Task1
+namespace Task2
 {
     class FarManager
     {
-        public int cursor,sz;
+        public int cursor, sz;
         public bool ok;
         public string path;
         DirectoryInfo di = null;
@@ -20,13 +20,13 @@ namespace Task1
         }
         public FarManager(string path)
         {
-            this.path = path;
             cursor = 0;
+            this.path = path;
             di = new DirectoryInfo(path);
             sz = di.GetFileSystemInfos().Length;
             ok = true;
         }
-        public void Color(FileSystemInfo fs,int index)
+        public void Color(FileSystemInfo fs, int index)
         {
             if (cursor == index)
             {
@@ -51,9 +51,9 @@ namespace Task1
             Console.Clear();
             di = new DirectoryInfo(path);
             FileSystemInfo[] fs = di.GetFileSystemInfos();
-            for(int i = 0, k = 0; i < fs.Length; i++)
+            for (int i = 0, k = 0; i < fs.Length; i++)
             {
-                if(ok==false && fs[i].Name[0] == '.')
+                if (ok == false && fs[i].Name[0] == '.')
                 {
                     continue;
                 }
@@ -71,22 +71,40 @@ namespace Task1
         public void Down()
         {
             cursor++;
-            if (cursor == 0)
+            if (cursor == sz)
                 cursor = 0;
         }
+
         public void CalcSz()
         {
             di = new DirectoryInfo(path);
             FileSystemInfo[] fs = di.GetFileSystemInfos();
-            sz =fs.Length;
+            sz = fs.Length;
             if (ok == false)
             {
                 for(int i = 0; i < fs.Length; i++)
                 {
                     if (fs[i].Name[0] == '.')
+                    {
                         sz--;
+                    }
                 }
             }
+        }
+        public void Delete(string dir)
+        {
+            string[] files = Directory.GetFiles(dir);
+            string[] dirs = Directory.GetDirectories(dir);
+            foreach(string file in files)
+            {
+                File.SetAttributes(file, FileAttributes.Normal);
+                File.Delete(file);
+            }
+            foreach(string dirr in dirs)
+            {
+                Delete(dir);
+            }
+            Directory.Delete(dir, false);
         }
         public void Start()
         {
@@ -105,12 +123,13 @@ namespace Task1
                 }
                 if (conskey.Key == ConsoleKey.LeftArrow)
                 {
-                    cursor=0;
+                    cursor = 0;
                     ok = true;
                 }
                 if (conskey.Key == ConsoleKey.Enter)
                 {
-                    if (fsi.GetType() == typeof(DirectoryInfo)){
+                    if (fsi.GetType() == typeof(DirectoryInfo))
+                    {
                         cursor = 0;
                         path = fsi.FullName;
                     }
@@ -118,7 +137,25 @@ namespace Task1
                 if (conskey.Key == ConsoleKey.Backspace)
                 {
                     cursor = 0;
-                    path=di.Parent.FullName;
+                    path = di.Parent.FullName;
+                }
+                if (conskey.Key == ConsoleKey.D)
+                {
+                    if(fsi is DirectoryInfo)
+                    {
+                        Delete(fsi.FullName);
+                    }
+                    else
+                    {
+                        fsi.Delete();
+                    }
+                    cursor = 0;
+                }
+                if (conskey.Key == ConsoleKey.P)
+                {
+                    string oldname = fsi.FullName;
+                    string newname = Console.ReadLine();
+                    Directory.Move(oldname, path + "/" + newname);
                 }
             }
         }
@@ -127,7 +164,7 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\Ержан";
+            string path = @"C:\Users\Ержан\Desktop";
             FarManager farManager = new FarManager(path);
             farManager.Start();
         }
