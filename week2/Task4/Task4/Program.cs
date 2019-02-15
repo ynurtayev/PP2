@@ -16,9 +16,10 @@ namespace Task4
             //created file
             var c = File.Create(@"C: \Users\Ержан\Desktop\pp2\week2\Task4\create\" + s);
             c.Close();
-            //copyed first file and deleted first file
+            //copied first file and deleted first file
             File.Copy(@"C: \Users\Ержан\Desktop\pp2\week2\Task4\create\" + s, @"C: \Users\Ержан\Desktop\pp2\week2\Task4\copy\" + s);
             File.Delete(@"C: \Users\Ержан\Desktop\pp2\week2\Task4\create\" + s);
+
         }
     }
 }
