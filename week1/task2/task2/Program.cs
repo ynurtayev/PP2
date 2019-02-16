@@ -6,37 +6,42 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    class Student//created class student
+    class Student
     {
-        string name;//declaring variables
-        public int year;
-        string id;
-        public Student(string name, string id)//constructor
+        private string name, id;
+        private int year;
+        public Student(string name, string id)//here  all variables 
         {
-            this.name = name;
-            this.id = id;
+            this.name =name;
+            this.id =id;
+            year = 2018;
         }
-        public String getName()//constructor that return name
+        public string GetName()//constructor that return name
         {
             return name;
         }
-        public String getId()//constructor that return id
+        public string GetId()//return id
         {
             return id;
         }
-        public int ayear(int year)//return impecment year
+        public int GetYear()//return year
         {
             return year;
-            ++year;
         }
-
-
+        public void Increment()//do +1 every year
+        {
+            year++;
+        }
     }
     class Program
     {
         static void Main(string[] args)
         {
-
+            Student F = new Student("Yerzhan", "18BD141312");
+            Console.WriteLine(F.GetName() + " " + F.GetId());
+            F.Increment();
+            Console.WriteLine(F.GetYear());
+            Console.ReadKey();
         }
     }
 }

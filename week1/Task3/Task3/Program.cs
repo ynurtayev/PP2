@@ -10,20 +10,17 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());// считываем переменную из консол
-            int[] a = new int[n];
-            string[] s = new string[n];
-            s = Console.ReadLine().Split();//cчитаваем с помощи сплит элеменов массива
-            for(int i = 0; i < n; i++)
+            int n = int.Parse(Console.ReadLine()); // Read number of integers
+            string[] a = Console.ReadLine().Split(' '); // Read string and seperate it into n strings using split
+            int[] Answer = new int[2 * n]; // Create array with size 2*n
+            for (int i = 0; i < n; ++i)
             {
-                a[i] = int.Parse(s[i]);
+                Answer[i * 2] = Answer[2 * i + 1] = int.Parse(a[i]); // Convert string into integer and add it twice to our array
             }
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < 2 * n; ++i)
             {
-                Console.Write(a[i] + " ");//делаю ввыд два раза
-                Console.Write(a[i] + " ");
+                Console.Write(Answer[i] + " "); // Print the array
             }
-            Console.ReadKey();
         }
     }
 }
